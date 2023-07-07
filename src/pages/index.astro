@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Rotating Navigation">
-	<div class="w-screen h-full flex flex-col bg-gray-600 relative">
+	<div class="w-screen h-full flex flex-col bg-gray-800 relative">
 		<div class="z-2 absolute flex top-[-70px] left-[-70px] h-40 w-40 bg-red-400 rounded-full z-[1]">
 			
 		</div>
@@ -20,7 +20,7 @@ import Layout from '../layouts/Layout.astro';
 		<button id='close' class="absolute top-14 left-[-20px] z-[2] transition-all duration-700">
 			<svg height="20px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="20px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/></svg>
 		</button>
-		<main id='article' class="bg-white px-52 py-20 z-0 transition-all duration-700 ">
+		<main id='article' class="bg-white px-10 md:px-52 py-20 z-0 transition-all duration-700 ">
 			<h1 class="text-black font-semibold text-4xl">Amazing Article</h1>
 			<i class="text-gray-600 text-sm">Florin Pop</i>
 			<p class="mt-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit sequi, cupiditate accusantium quas error maiores molestias, veritatis harum aliquam sint omnis illo earum optio recusandae sed. Voluptas repellat cupiditate dolorum minus velit earum illum aliquam animi debitis accusamus asperiores, quis ex aperiam consequatur sint voluptates voluptate blanditiis harum omnis!</p>
@@ -28,9 +28,9 @@ import Layout from '../layouts/Layout.astro';
 			<img class="mb-6" src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" alt="My Dog">
 			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi itaque alias doloremque, tempora aut velit magnam minima perspiciatis molestiae culpa?</p>
 		</main>
-		<a id="home" class="transition-all duration-700 absolute top-[400px] left-[-100px] z-2 font-semibold text-xl text-white">HOME</a>
-		<a id="about" class="transition-all duration-700 absolute top-[450px] left-[-100px] z-2 font-semibold text-xl text-white">ABOUT</a>
-		<a id="contact" class="transition-all duration-700 absolute top-[500px] left-[-100px] z-2 font-semibold text-xl text-white">CONTACT</a>
+		<a id="home" class="transition-all duration-1000 absolute top-[400px] left-[-100px] z-2 font-semibold text-xl text-white">HOME</a>
+		<a id="about" class="transition-all duration-1000 absolute top-[450px] left-[-100px] z-2 font-semibold text-xl text-white">ABOUT</a>
+		<a id="contact" class="transition-all duration-1000 absolute top-[500px] left-[-100px] z-2 font-semibold text-xl text-white">CONTACT</a>
 	</div>
 </Layout>
 
@@ -43,7 +43,7 @@ import Layout from '../layouts/Layout.astro';
 	const contact = document.getElementById('contact');
 
 	open.addEventListener('click', () => {
-		article.classList.add('-rotate-[20deg]','-translate-y-72','translate-x-44');
+		article.classList.add('-rotate-[20deg]','-translate-y-16','md:-translate-y-72','translate-x-36','md:translate-x-44');
 		open.classList.add('-rotate-[90deg]','-translate-y-20','translate-x-12');
 		close.classList.add('-rotate-[90deg]','-translate-y-6','translate-x-12');
 		home.classList.remove('left-[-100px]');
@@ -55,7 +55,7 @@ import Layout from '../layouts/Layout.astro';
 	});
 
 	close.addEventListener('click', () => {
-		article.classList.remove('-rotate-[20deg]','-translate-y-72','translate-x-44');
+		article.classList.remove('-rotate-[20deg]','-translate-y-16','md:-translate-y-72','translate-x-36','md:translate-x-44');
 		open.classList.remove('-rotate-[90deg]','-translate-y-20','translate-x-12');
 		close.classList.remove('-rotate-[90deg]','-translate-y-6','translate-x-12');
 		home.classList.remove('left-10');
